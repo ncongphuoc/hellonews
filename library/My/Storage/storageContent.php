@@ -48,13 +48,6 @@ class storageContent extends AbstractTableGateway {
         try {
             $strWhere = $this->_buildWhere($arrCondition);
             $adapter = $this->adapter;
-//            $sql = new Sql($adapter);
-//            $select = $sql->Select($this->table)
-//                    ->where('1=1' . $strWhere)
-//                    ->order($strOrder)
-//                    ->limit($intLimit)
-//                    ->offset($intLimit * ($intPage - 1));
-//            $query = $sql->getSqlStringForSqlObject($select);
             
             $query = 'select ' . $arrFields
                 . ' from ' . $this->table 
@@ -117,18 +110,16 @@ class storageContent extends AbstractTableGateway {
             $insert = $sql->insert($this->table)->values($p_arrParams);
             $query = $sql->getSqlStringForSqlObject($insert);
             $adapter->createStatement($query)->execute();
-            $result = $adapter->getDriver()->getLastGeneratedValue();
-            if ($result) {
-                $p_arrParams['cont_id'] = $result;
-                $instanceJob = new \My\Job\JobContent();
-                $instanceJob->addJob(SEARCH_PREFIX . 'writeContent', $p_arrParams);
+            $cont_id = $adapter->getDriver()->getLastGeneratedValue();
+            //
+            if ($cont_id) {
+                $p_arrParams['cont_id'] = $cont_id;
+                $instanceSearch = new \My\Search\Content();
+                $arrDocument = new \Elastica\Document($cont_id, $p_arrParams);
+                $instanceSearch->add($arrDocument);
             }
-            return $result;
+            return $cont_id;
         } catch (\Exception $exc) {
-            echo '<pre>';
-            print_r($exc->getMessage());
-            echo '</pre>';
-            die();
             if (APPLICATION_ENV !== 'production') {
                 die($exc->getMessage());
             }
@@ -136,23 +127,23 @@ class storageContent extends AbstractTableGateway {
         }
     }
 
-    public function edit($p_arrParams, $intProductID) {
+    public function edit($p_arrParams, $intContentID) {
         try {
-            if (!is_array($p_arrParams) || empty($p_arrParams) || empty($intProductID)) {
+            if (!is_array($p_arrParams) || empty($p_arrParams) || empty($intContentID)) {
                 return false;
             }
-            $result = $this->update($p_arrParams, 'cont_id=' . $intProductID);
+            $result = $this->update($p_arrParams, 'cont_id=' . $intContentID);
             if ($result) {
-                $p_arrParams['cont_id'] = $intProductID;
-                $instanceJob = new \My\Job\JobContent();
-                $instanceJob->addJob(SEARCH_PREFIX . 'editContent', $p_arrParams);
+                $updateData = new \Elastica\Document();
+                $updateData->setData($p_arrParams);
+                $document = new \Elastica\Document($intContentID, $p_arrParams);
+                $document->setUpsert($updateData);
+
+                $instanceSearch = new \My\Search\Content();
+                $instanceSearch->edit($document);
             }
             return $result;
         } catch (\Exception $exc) {
-            echo '<pre>';
-            print_r($exc->getMessage());
-            echo '</pre>';
-            die();
             if (APPLICATION_ENV !== 'production') {
                 die($exc->getMessage());
             }

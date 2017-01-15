@@ -4,10 +4,10 @@ namespace My;
 
 class General {
 
-    const SITE_DOMAIN_FULL = 'http://tintuc360.me';
-    const TITLE_META = " - Tintuc360.me";
-    const SITE_AUTH = "Tintuc360.me";
-    const SITE_DOMAIN = 'Tintuc360.me';
+    const SITE_DOMAIN_FULL = 'http://hellonews.info';
+    const TITLE_META = " - Hellonews.info";
+    const SITE_AUTH = "Hellonews.info";
+    const SITE_DOMAIN = 'Hellonews.info';
     const SITE_SLOGAN = 'Tin tức tổng hợp';
     const SITE_HOTLINE = '';
     const KEYWORD_DEFAULT = 'teen viet nam, giới trẻ, xu hướng, âm nhạc, xem phim, đời sống, hàng hiệu, chuyện lạ, thời trang trẻ, mới lớn, đang yêu, sành điệu, chuyện cười, khéo tay, các sao';
@@ -37,13 +37,12 @@ class General {
     const SOCIAL_FACEBOOK_URL = 'https://www.facebook.com/tintuc360.me';
 
     //category
-    const CATEGORY_CHUYEN_SAO = 1;
-    const CATEGORY_THOI_TRANG = 2;
-    const CATEGORY_SUC_KHOE = 3;
-    const CATEGORY_LAM_DEP = 4;
-    const CATEGORY_MON_NGON = 5;
-    const CATEGORY_ME_VA_BE = 6;
-    const CATEGORY_DU_LICH = 7;
+    const CATEGORY_SHOWBIZ = 1;
+    const CATEGORY_SCIENCE = 2;
+    const CATEGORY_STYLE = 3;
+    const CATEGORY_HEALTH = 4;
+    const CATEGORY_NATURALLY_SAVVY= 5;
+    const CATEGORY_MON_AND_BABY = 6;
 
     static $configFB = array(
         'access_token' => 'EAARQrqSKvfcBAF8FNlecuAu73Hsdl96XNCZCz5mW7HZCf14WbuXuc76kJxxfrZBBA0H9Rh2ZAaZBdZCnXT8ZC81ufko0WfDq3yBIrNBt0RP3ya9xfDKB262YQosZByMDjZANrGcv1vdMTv9NYtLHNZBTLDcrX7n2fZBYQ6ToWyeevbqTZAEsUuAyxHX1',

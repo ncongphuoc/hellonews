@@ -169,10 +169,8 @@ class MyController extends AbstractActionController {
 
         if ($arrData['module'] === 'frontend') {
             $serviceCategory = $this->serviceLocator->get('My\Models\Category');
-            $arrCategoryList = $serviceCategory->getList(['cate_status' => 1]);
+            $arrCategoryList = $serviceCategory->getListCategory(['cate_status' => 1]);
 
-//            $instanceSearchCategory = new \My\Search\Category();
-//            $arrCategoryList = $instanceSearchCategory->getList(['cate_status' => 1], [], ['cate_sort' => ['order' => 'asc'], 'cate_id' => ['order' => 'asc']]);
             $arr_category = array();
             foreach ($arrCategoryList as $category) {
                 $arr_category[$category['cate_id']] = $category;
@@ -182,19 +180,9 @@ class MyController extends AbstractActionController {
             //get list content hot
             $serviceContent = $this->serviceLocator->get('My\Models\Content');
             $arrFields = 'cont_id, cont_title, cont_slug, cate_id, cont_resize_image, created_date, cont_description';
-            $arr_content_hot = $serviceContent->getListLimit(['cont_status' => 1], 1, 5, 'cont_views DESC', $arrFields);
-//            $arrFields = array('cont_id', 'cont_title', 'cont_slug', 'cate_id','cont_resize_image','created_date');
-//            $instanceSearchContent = new \My\Search\Content();
-//            $arr_content_hot = $instanceSearchContent->getListLimit(['cont_status' => 1], 1, 5, ['cont_views' => ['order' => 'desc']],$arrFields);
-            define('ARR_CONTENT_HOT_LIST', serialize($arr_content_hot));
+            $arr_content_hot = $serviceContent->getListHostContent(['cont_status' => 1], 1, 5, 'cont_views DESC', $arrFields);
 
-            //50 KEYWORD :)
-//            $instanceSearchKeyword = new \My\Search\Keyword();
-////            $arrKeywordList = $instanceSearchKeyword->getListLimit(['full_text_keyname' => 'khám phá'], 1, 50, ['_score' => ['order' => 'desc']]);
-//            $arrKeywordList = $instanceSearchKeyword->getListLimit(['is_crawler' => 1], 1, 50, ['key_id' => ['order' => 'asc']]);
-//            define('ARR_KEYWORD_ALL_PAGE', serialize($arrKeywordList));
-//
-//            define('KEYWORD_SEARCH', !empty($arrData['keyword']) && $arrData['action'] == 'index' && $arrData['controller'] == 'search' ? $arrData['keyword'] : NULL);
+            define('ARR_CONTENT_HOT_LIST', serialize($arr_content_hot));
 
             unset($arrKeywordList);
             unset($arr_content_hot);

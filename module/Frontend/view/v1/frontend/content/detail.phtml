@@ -48,6 +48,14 @@ $list_category = unserialize(ARR_CATEGORY);
             </header>
         </div>
 
+        <?php if($category_detail['cate_id'] == \My\General::CATEGORY_SHOWBIZ) { ?>
+        <div class="td-post-featured-image">
+            <a href="" data-caption="" class="td-modal-image">
+            <img width="696" height="505" class="entry-thumb" src="<?php echo $content_detail['cont_main_image'] ?>" alt="" title="<?php echo $content_detail['cont_title'] ?>">
+            </a>
+        </div>
+        <?php } ?>
+
         <div class=td-post-content>
             <h3 class="entry-title"><?php echo $content_detail['cont_description'] ?></h3>
             <?php echo $content_detail['cont_detail'] ?>

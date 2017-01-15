@@ -192,13 +192,23 @@ return array(
                         ),
                     ),
                 ),
-                'init-data-keyword' => array(
+                'test-crawler' => array(
                     'options' => array(
-                        'route' => 'init-data-keyword',
+                        'route' => 'test-crawler',
                         'defaults' => array(
                             '__NAMESPACE__' => 'Backend\Controller',
                             'controller' => 'console',
-                            'action' => 'init-keyword-old'
+                            'action' => 'test-crawler'
+                        ),
+                    ),
+                ),
+                'init-keyword' => array(
+                    'options' => array(
+                        'route' => 'init-keyword',
+                        'defaults' => array(
+                            '__NAMESPACE__' => 'Backend\Controller',
+                            'controller' => 'console',
+                            'action' => 'init-keyword'
                         ),
                     ),
                 )

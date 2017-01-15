@@ -71,8 +71,9 @@ class Keyword extends SearchAbstract {
             'key_slug' => ['type' => 'string', 'index' => 'not_analyzed'],
             'created_date' => ['type' => 'integer', 'index' => 'not_analyzed'],
             'cate_id' => ['type' => 'integer', 'index' => 'not_analyzed'],
+            'key_level' => ['type' => 'integer', 'index' => 'not_analyzed'],
             'key_weight' => ['type' => 'integer', 'index' => 'not_analyzed'],
-            'key_content' => ['type' => 'string', 'index' => 'not_analyzed'],
+            'content_id' => ['type' => 'string', 'index' => 'not_analyzed'],
             'content_crawler' => ['type' => 'string', 'index' => 'not_analyzed'],
         ]);
         $mapping->send();
