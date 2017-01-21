@@ -5,31 +5,31 @@ $arr_category = unserialize(ARR_CATEGORY)
     <div class="wpb_column vc_column_container td-pb-span8">
         <div class="vc_column-inner ">
             <div class=wpb_wrapper>
-                <div class="td_block_wrap td_block_1 td_chuyen_sao td-pb-border-top">
+                <div class="td_block_wrap td_block_1 td_world td-pb-border-top">
                     <style scoped>
-                        .td_chuyen_sao .td_module_wrap:hover .entry-title a, .td_chuyen_sao .td-subcat-item a:hover, .td_chuyen_sao .td-opacity-read .td-read-more a:hover, .td_chuyen_sao .td-opacity-author .td-post-author-name a:hover, .td_chuyen_sao .td-instagram-user a {
+                        .td_world .td_module_wrap:hover .entry-title a, .td_world .td-subcat-item a:hover, .td_world .td-opacity-read .td-read-more a:hover, .td_world .td-opacity-author .td-post-author-name a:hover, .td_world .td-instagram-user a {
                             color: #f9c100
                         }
 
-                        .td_chuyen_sao .td-next-prev-wrap a:hover, .td_chuyen_sao .td-load-more-wrap a:hover {
+                        .td_world .td-next-prev-wrap a:hover, .td_world .td-load-more-wrap a:hover {
                             background-color: #f9c100;
                             border-color: #f9c100
                         }
 
-                        .td_chuyen_sao .block-title span, .td_chuyen_sao .td-trending-now-title, .td_chuyen_sao .block-title a, .td_chuyen_sao .td-read-more a {
+                        .td_world .block-title span, .td_world .td-trending-now-title, .td_world .block-title a, .td_world .td-read-more a {
                             background-color: #f9c100
                         }
 
-                        .td_chuyen_sao .block-title {
+                        .td_world .block-title {
                             border-color: #f9c100
                         }
                     </style>
                     <div class=td-block-title-wrap>
-                        <a title="Chuyện sao"
-                           href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_CHUYEN_SAO]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_CHUYEN_SAO]['cate_id']]) ?>">
+                        <a title="World"
+                           href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_WORLD]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_WORLD]['cate_id']]) ?>">
                             <h4 class=block-title>
                                 <span><i
-                                        class="fa <?php echo $this->arrCategory[\My\General::CATEGORY_CHUYEN_SAO]['cate_icon'] ?>"></i> CHUYỆN SAO</span>
+                                        class="fa <?php echo $this->arrCategory[\My\General::CATEGORY_WORLD]['cate_icon'] ?>"></i> WORLD</span>
                             </h4>
                         </a>
                     </div>
@@ -40,37 +40,37 @@ $arr_category = unserialize(ARR_CATEGORY)
                                     <div class=td-module-image>
                                         <div class=td-module-thumb>
                                             <a rel="nofollow"
-                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_id']]) ?>"
+                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_id']]) ?>"
                                                rel=bookmark
-                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_title'] ?>">
+                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_title'] ?>">
                                                 <img width=324 height=235 class=entry-thumb
-                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_main_image'] ?>"
-                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_title'] ?>"
-                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_title'] ?>"/>
+                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_main_image'] ?>"
+                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_title'] ?>"
+                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_title'] ?>"/>
                                             </a>
                                         </div>
-                                        <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_CHUYEN_SAO]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_CHUYEN_SAO]['cate_id']]) ?>"
+                                        <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_WORLD]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_WORLD]['cate_id']]) ?>"
                                            class=td-post-category>
-                                            <?php echo $this->arrCategory[\My\General::CATEGORY_CHUYEN_SAO]['cate_name'] ?>
+                                            <?php echo $this->arrCategory[\My\General::CATEGORY_WORLD]['cate_name'] ?>
                                         </a>
                                     </div>
                                     <h3 class="entry-title td-module-title">
-                                        <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_id']]) ?>"
+                                        <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_id']]) ?>"
                                            rel=bookmark
-                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_title'] ?>">
-                                            <?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_title'] ?>
+                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_title'] ?>">
+                                            <?php echo $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_title'] ?>
                                         </a>
                                     </h3>
                                     <div class=td-module-meta-info>
                                             <span class=td-post-date>
                                                 <time class="entry-date updated td-module-date"
                                                       datetime="2015-03-22T05:47:34+00:00">
-                                                    <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['created_date']); ?>
+                                                    <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_WORLD][1]['created_date']); ?>
                                                 </time>
                                             </span>
                                     </div>
                                     <div class=td-excerpt>
-                                        <?php echo (strlen($this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_description']) < 150) ? $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_description'] : mb_substr($this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][1]['cont_description'], 0, 150, 'UTF-8') . '...'; ?>
+                                        <?php echo (strlen($this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_description']) < 150) ? $this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_description'] : mb_substr($this->arrContent[\My\General::CATEGORY_WORLD][1]['cont_description'], 0, 150, 'UTF-8') . '...'; ?>
                                     </div>
                                 </div>
                             </div>
@@ -79,28 +79,28 @@ $arr_category = unserialize(ARR_CATEGORY)
                                     <div class="td_module_6 td_module_wrap td-animation-stack">
                                         <div class=td-module-thumb>
                                             <a rel="nofollow"
-                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_id']]) ?>"
+                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_id']]) ?>"
                                                rel="bookmark"
-                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_title'] ?>">
+                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_title'] ?>">
                                                 <img width=100 height=70 class=entry-thumb
-                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_resize_image'] ?>"
-                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_title'] ?>"
-                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_title'] ?>"/>
+                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_resize_image'] ?>"
+                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_title'] ?>"
+                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_title'] ?>"/>
                                             </a>
                                         </div>
                                         <div class=item-details>
                                             <h3 class="entry-title td-module-title">
-                                                <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_id']]) ?>"
+                                                <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_id']]) ?>"
                                                    rel="bookmark"
-                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_title'] ?>">
-                                                    <?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['cont_title'] ?>
+                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_title'] ?>">
+                                                    <?php echo $this->arrContent[\My\General::CATEGORY_WORLD][$i]['cont_title'] ?>
                                                 </a>
                                             </h3>
                                             <div class=td-module-meta-info>
                                                 <span class=td-post-date>
                                                     <time class="entry-date updated td-module-date"
-                                                          datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['created_date']); ?>">
-                                                        <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][$i]['created_date']); ?>
+                                                          datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_WORLD][$i]['created_date']); ?>">
+                                                        <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_WORLD][$i]['created_date']); ?>
                                                     </time>
                                                 </span>
                                             </div>
@@ -111,30 +111,30 @@ $arr_category = unserialize(ARR_CATEGORY)
                         </div>
                     </div>
                 </div>
-                <div class="td_block_wrap td_block_2 td_thoi_trang td-pb-border-top">
+                <div class="td_block_wrap td_block_2 td_showbiz td-pb-border-top">
                     <style scoped>
-                        .td_thoi_trang .td_module_wrap:hover .entry-title a, .td_thoi_trang .td-subcat-item a:hover, .td_thoi_trang .td-opacity-read .td-read-more a:hover, .td_thoi_trang .td-opacity-author .td-post-author-name a:hover, .td_thoi_trang .td-instagram-user a {
+                        .td_showbiz .td_module_wrap:hover .entry-title a, .td_showbiz .td-subcat-item a:hover, .td_showbiz .td-opacity-read .td-read-more a:hover, .td_showbiz .td-opacity-author .td-post-author-name a:hover, .td_showbiz .td-instagram-user a {
                             color: #4caf50
                         }
 
-                        .td_thoi_trang .td-next-prev-wrap a:hover, .td_thoi_trang .td-load-more-wrap a:hover {
+                        .td_showbiz .td-next-prev-wrap a:hover, .td_showbiz .td-load-more-wrap a:hover {
                             background-color: #4caf50;
                             border-color: #4caf50
                         }
 
-                        .td_thoi_trang .block-title span, .td_thoi_trang .block-title a, .td_thoi_trang .td-read-more a {
+                        .td_showbiz .block-title span, .td_showbiz .block-title a, .td_showbiz .td-read-more a {
                             background-color: #4caf50
                         }
 
-                        .td_thoi_trang .block-title {
+                        .td_showbiz .block-title {
                             border-color: #4caf50
                         }</style>
                     <div class=td-block-title-wrap>
-                        <a title="Thời trang"
-                           href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_THOI_TRANG]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_THOI_TRANG]['cate_id']]) ?>">
+                        <a title="Showbiz"
+                           href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_SHOWBIZ]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_SHOWBIZ]['cate_id']]) ?>">
                             <h4 class=block-title>
-                                <span><i
-                                        class="fa <?php echo $this->arrCategory[\My\General::CATEGORY_THOI_TRANG]['cate_icon'] ?>"></i> THỜI TRANG</span>
+                                <span>
+                                    <i class="fa <?php echo $this->arrCategory[\My\General::CATEGORY_SHOWBIZ]['cate_icon'] ?>"></i> SHOWBIZ</span>
                             </h4>
                         </a>
                     </div>
@@ -146,37 +146,37 @@ $arr_category = unserialize(ARR_CATEGORY)
                                         <div class=td-module-image>
                                             <div class=td-module-thumb>
                                                 <a rel="nofollow"
-                                                   href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_id']]) ?>"
+                                                   href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_id']]) ?>"
                                                    rel=bookmark
-                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>">
+                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>">
                                                     <img width=324 height=160 class=entry-thumb
-                                                         src="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_main_image'] ?>"
-                                                         alt="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>"
-                                                         title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>"/>
+                                                         src="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_main_image'] ?>"
+                                                         alt="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>"
+                                                         title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>"/>
                                                 </a>
                                             </div>
-                                            <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_THOI_TRANG]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_THOI_TRANG]['cate_id']]) ?>"
+                                            <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_SHOWBIZ]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_SHOWBIZ]['cate_id']]) ?>"
                                                class=td-post-category>
-                                                <?php echo $this->arrCategory[\My\General::CATEGORY_THOI_TRANG]['cate_name'] ?>
+                                                <?php echo $this->arrCategory[\My\General::CATEGORY_SHOWBIZ]['cate_name'] ?>
                                             </a>
                                         </div>
                                         <h3 class="entry-title td-module-title">
-                                            <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_id']]) ?>"
+                                            <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_id']]) ?>"
                                                rel=bookmark
-                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>">
-                                                <?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>
+                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>">
+                                                <?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>
                                             </a>
                                         </h3>
                                         <div class=td-module-meta-info>
                                             <span class=td-post-date>
                                                 <time class="entry-date updated td-module-date"
-                                                      datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['created_date']); ?>">
-                                                    <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['created_date']); ?>
+                                                      datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['created_date']); ?>">
+                                                    <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['created_date']); ?>
                                                 </time>
                                             </span>
                                         </div>
                                         <div class=td-excerpt>
-                                            <?php echo (strlen($this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_description']) < 150) ? $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_description'] : mb_substr($this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_description'], 0, 150, 'UTF-8') . '...'; ?>
+                                            <?php echo (strlen($this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_description']) < 150) ? $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_description'] : mb_substr($this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_description'], 0, 150, 'UTF-8') . '...'; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -188,28 +188,28 @@ $arr_category = unserialize(ARR_CATEGORY)
                                     <div class="td_module_6 td_module_wrap td-animation-stack">
                                         <div class=td-module-thumb>
                                             <a rel="nofollow"
-                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_id']]) ?>"
+                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_id']]) ?>"
                                                rel=bookmark
-                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>">
+                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>">
                                                 <img width=100 height=70 class=entry-thumb
-                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_resize_image'] ?>"
-                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>"
-                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>"/>
+                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_resize_image'] ?>"
+                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>"
+                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>"/>
                                             </a>
                                         </div>
                                         <div class=item-details>
                                             <h3 class="entry-title td-module-title">
-                                                <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_id']]) ?>"
+                                                <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_id']]) ?>"
                                                    rel=bookmark
-                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>">
-                                                    <?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>
+                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>">
+                                                    <?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>
                                                 </a>
                                             </h3>
                                             <div class=td-module-meta-info>
                                                 <span class=td-post-date>
                                                     <time class="entry-date updated td-module-date"
-                                                          datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['created_date']); ?>">
-                                                        <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['created_date']); ?>
+                                                          datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['created_date']); ?>">
+                                                        <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['created_date']); ?>
                                                     </time>
                                                 </span>
                                             </div>
@@ -224,28 +224,28 @@ $arr_category = unserialize(ARR_CATEGORY)
                                     <div class="td_module_6 td_module_wrap td-animation-stack">
                                         <div class=td-module-thumb>
                                             <a rel="nofollow"
-                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_id']]) ?>"
+                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_id']]) ?>"
                                                rel=bookmark
-                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>">
+                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>">
                                                 <img width=100 height=70 class=entry-thumb
-                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_resize_image'] ?>"
-                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>"
-                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>"/>
+                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_resize_image'] ?>"
+                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>"
+                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>"/>
                                             </a>
                                         </div>
                                         <div class=item-details>
                                             <h3 class="entry-title td-module-title">
-                                                <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_id']]) ?>"
+                                                <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_id']]) ?>"
                                                    rel=bookmark
-                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>">
-                                                    <?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['cont_title'] ?>
+                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>">
+                                                    <?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['cont_title'] ?>
                                                 </a>
                                             </h3>
                                             <div class=td-module-meta-info>
                                                 <span class=td-post-date>
                                                     <time class="entry-date updated td-module-date"
-                                                          datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['created_date']); ?>">
-                                                        <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_THOI_TRANG][$i]['created_date']); ?>
+                                                          datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['created_date']); ?>">
+                                                        <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SHOWBIZ][$i]['created_date']); ?>
                                                     </time>
                                                 </span>
                                             </div>
@@ -256,31 +256,31 @@ $arr_category = unserialize(ARR_CATEGORY)
                         </div>
                     </div>
                 </div>
-                <div class="td_block_wrap td_block_15 td_lam_dep td-pb-border-top">
+                <div class="td_block_wrap td_block_15 td_science td-pb-border-top">
                     <style>
-                        .td_lam_dep .td_module_wrap:hover .entry-title a, .td_lam_dep .td-subcat-item a:hover, .td_lam_dep .td-opacity-read .td-read-more a:hover, .td_lam_dep .td-opacity-author .td-post-author-name a:hover, .td_lam_dep .td-instagram-user a {
+                        .td_science .td_module_wrap:hover .entry-title a, .td_science .td-subcat-item a:hover, .td_science .td-opacity-read .td-read-more a:hover, .td_science .td-opacity-author .td-post-author-name a:hover, .td_science .td-instagram-user a {
                             color: #607d8b
                         }
 
-                        .td_lam_dep .td-next-prev-wrap a:hover, .td_lam_dep .td-load-more-wrap a:hover {
+                        .td_science .td-next-prev-wrap a:hover, .td_science .td-load-more-wrap a:hover {
                             background-color: #607d8b;
                             border-color: #607d8b
                         }
 
-                        .td_lam_dep .block-title span, .td_lam_dep .block-title a, .td_lam_dep .td-read-more a {
+                        .td_science .block-title span, .td_science .block-title a, .td_science .td-read-more a {
                             background-color: #607d8b
                         }
 
-                        .td_lam_dep .block-title {
+                        .td_science .block-title {
                             border-color: #607d8b
                         }
                     </style>
                     <div class=td-block-title-wrap>
                         <a title="Du lịch"
-                           href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_DU_LICH]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_DU_LICH]['cate_id']]) ?>">
+                           href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_SCIENCE]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_SCIENCE]['cate_id']]) ?>">
                             <h4 class=block-title>
                                 <span><i
-                                        class="fa <?php echo $this->arrCategory[\My\General::CATEGORY_DU_LICH]['cate_icon'] ?>"></i> DU LỊCH</span>
+                                        class="fa <?php echo $this->arrCategory[\My\General::CATEGORY_SCIENCE]['cate_icon'] ?>"></i> SCIENCE</span>
                             </h4>
                         </a>
                     </div>
@@ -292,21 +292,21 @@ $arr_category = unserialize(ARR_CATEGORY)
                                         <div class=td-module-image>
                                             <div class=td-module-thumb>
                                                 <a rel="nofollow"
-                                                   href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_id']]) ?>"
+                                                   href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_id']]) ?>"
                                                    rel="bookmark"
-                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>">
+                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>">
                                                     <img width=218 height=150 class=entry-thumb
-                                                         src="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_resize_image'] ?>"
-                                                         alt="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>"
-                                                         title="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>"/>
+                                                         src="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_resize_image'] ?>"
+                                                         alt="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>"
+                                                         title="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>"/>
                                                 </a>
                                             </div>
                                         </div>
                                         <h3 class="entry-title td-module-title">
-                                            <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_id']]) ?>"
+                                            <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_id']]) ?>"
                                                rel="bookmark"
-                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>">
-                                                <?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>
+                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>">
+                                                <?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>
                                             </a>
                                         </h3>
                                     </div>
@@ -320,21 +320,21 @@ $arr_category = unserialize(ARR_CATEGORY)
                                         <div class=td-module-image>
                                             <div class=td-module-thumb>
                                                 <a rel="nofollow"
-                                                   href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_id']]) ?>"
+                                                   href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_id']]) ?>"
                                                    rel="bookmark"
-                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>">
+                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>">
                                                     <img width=218 height=150 class=entry-thumb
-                                                         src="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_resize_image'] ?>"
-                                                         alt="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>"
-                                                         title="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>"/>
+                                                         src="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_resize_image'] ?>"
+                                                         alt="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>"
+                                                         title="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>"/>
                                                 </a>
                                             </div>
                                         </div>
                                         <h3 class="entry-title td-module-title">
-                                            <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_id']]) ?>"
+                                            <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_id']]) ?>"
                                                rel="bookmark"
-                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>">
-                                                <?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][$i]['cont_title'] ?>
+                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>">
+                                                <?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][$i]['cont_title'] ?>
                                             </a>
                                         </h3>
                                     </div>
@@ -364,10 +364,10 @@ $arr_category = unserialize(ARR_CATEGORY)
                     </style>
                     <div class=td-block-title-wrap>
                         <a title="Sức khỏe"
-                           href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_SUC_KHOE]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_SUC_KHOE]['cate_id']]) ?>">
+                           href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_HEALTH]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_HEALTH]['cate_id']]) ?>">
                             <h4 class=block-title>
                                 <span><i
-                                        class="fa <?php echo $this->arrCategory[\My\General::CATEGORY_SUC_KHOE]['cate_icon'] ?>"></i> SỨC KHỎE</span>
+                                        class="fa <?php echo $this->arrCategory[\My\General::CATEGORY_HEALTH]['cate_icon'] ?>"></i> SỨC KHỎE</span>
                             </h4>
                         </a>
                     </div>
@@ -378,37 +378,37 @@ $arr_category = unserialize(ARR_CATEGORY)
                                     <div class=td-module-image>
                                         <div class=td-module-thumb>
                                             <a rel="nofollow"
-                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_id']]) ?>"
+                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_id']]) ?>"
                                                rel=bookmark
-                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>">
+                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>">
                                                 <img width=324 height=235 class=entry-thumb
-                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_main_image'] ?>"
-                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>"
-                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>"/>
+                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_main_image'] ?>"
+                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>"
+                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>"/>
                                             </a>
                                         </div>
-                                        <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_SUC_KHOE]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_SUC_KHOE]['cate_id']]) ?>"
+                                        <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_HEALTH]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_HEALTH]['cate_id']]) ?>"
                                            class=td-post-category>
-                                            <?php echo $this->arrCategory[\My\General::CATEGORY_SUC_KHOE]['cate_name'] ?>
+                                            <?php echo $this->arrCategory[\My\General::CATEGORY_HEALTH]['cate_name'] ?>
                                         </a>
                                     </div>
                                     <h3 class="entry-title td-module-title">
-                                        <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_id']]) ?>"
+                                        <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_id']]) ?>"
                                            rel=bookmark
-                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>">
-                                            <?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>
+                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>">
+                                            <?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>
                                         </a>
                                     </h3>
                                     <div class=td-module-meta-info>
                                             <span class=td-post-date><time
                                                     class="entry-date updated td-module-date"
-                                                    datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['created_date']); ?>">
-                                                    <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['created_date']); ?>
+                                                    datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_HEALTH][0]['created_date']); ?>">
+                                                    <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_HEALTH][0]['created_date']); ?>
                                                 </time>
                                             </span>
                                     </div>
                                     <div class=td-excerpt>
-                                        <?php echo (strlen($this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_description']) < 150) ? $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_description'] : mb_substr($this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_description'], 0, 150, 'UTF-8') . '...'; ?>
+                                        <?php echo (strlen($this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_description']) < 150) ? $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_description'] : mb_substr($this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_description'], 0, 150, 'UTF-8') . '...'; ?>
                                     </div>
                                 </div>
                             </div>
@@ -417,28 +417,28 @@ $arr_category = unserialize(ARR_CATEGORY)
                                     <div class="td_module_6 td_module_wrap td-animation-stack">
                                         <div class=td-module-thumb>
                                             <a rel="nofollow"
-                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_id']]) ?>"
+                                               href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_id']]) ?>"
                                                rel="bookmark"
-                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_title'] ?>">
+                                               title="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_title'] ?>">
                                                 <img width=100 height=70 class=entry-thumb
-                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_resize_image'] ?>"
-                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_title'] ?>"
-                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_title'] ?>"/>
+                                                     src="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_resize_image'] ?>"
+                                                     alt="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_title'] ?>"
+                                                     title="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_title'] ?>"/>
                                             </a>
                                         </div>
                                         <div class=item-details>
                                             <h3 class="entry-title td-module-title">
-                                                <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_id']]) ?>"
+                                                <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_id']]) ?>"
                                                    rel="bookmark"
-                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_title'] ?>">
-                                                    <?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['cont_title'] ?>
+                                                   title="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_title'] ?>">
+                                                    <?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['cont_title'] ?>
                                                 </a>
                                             </h3>
                                             <div class=td-module-meta-info>
                                                 <span class=td-post-date>
                                                     <time class="entry-date updated td-module-date"
-                                                          datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['created_date']); ?>">
-                                                        <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_SUC_KHOE][$i]['created_date']); ?>
+                                                          datetime="<?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['created_date']); ?>">
+                                                        <?php echo date('d-m-Y', $this->arrContent[\My\General::CATEGORY_HEALTH][$i]['created_date']); ?>
                                                     </time>
                                                 </span>
                                             </div>
@@ -457,23 +457,23 @@ $arr_category = unserialize(ARR_CATEGORY)
             <div class=wpb_wrapper>
                 <div class="td-a-rec td-a-rec-id-sidebar">
                     <div class="td-visible-desktop">
-                        <div class="adsoptimal-slot" style="width: 300px; height: 250px;"></div>
+                        <img src="<?php echo STATIC_URL . '/f/v1/images/300x250.jpg' ?>">
                     </div>
                     <div class="td-visible-tablet-landscape">
-                        <div class="adsoptimal-slot" style="width: 300px; height: 250px;"></div>
+                        <img src="<?php echo STATIC_URL . '/f/v1/images/300x250.jpg' ?>">
                     </div>
                     <div class="td-visible-tablet-portrait">
-                        <div class="adsoptimal-slot" style="width: 300px; height: 250px;"></div>
+                        <img src="<?php echo STATIC_URL . '/f/v1/images/300x250.jpg' ?>">
                     </div>
                     <div class="td-visible-phone">
-                        <div class="adsoptimal-slot" style="width: 300px; height: 250px;"></div>
+                        <img src="<?php echo STATIC_URL . '/f/v1/images/300x250.jpg' ?>">
                     </div>
                 </div>
 
                 <div class="td_block_wrap td_block_21 td-pb-border-top">
                     <div class=td-block-title-wrap>
                         <h4 class=block-title>
-                            <span><i class="fa fa-eye" aria-hidden="true"></i> ĐỌC NHIỀU NHẤT</span>
+                            <span><i class="fa fa-eye" aria-hidden="true"></i> TOP VIEW</span>
                         </h4>
                     </div>
                     <div class="td_block_inner">
@@ -517,7 +517,7 @@ $arr_category = unserialize(ARR_CATEGORY)
                 <div class="td_block_wrap td_block_15 td-pb-border-top">
                     <div class=td-block-title-wrap>
                         <h4 class=block-title>
-                            <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> MỚI NHẤT</span>
+                            <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> LASTEST</span>
                         </h4>
                     </div>
                     <div class="td_block_inner td-column-1">
@@ -526,25 +526,25 @@ $arr_category = unserialize(ARR_CATEGORY)
                                 <div class=td-module-image>
                                     <div class=td-module-thumb>
                                         <a rel="nofollow"
-                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_id']]) ?>"
+                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_id']]) ?>"
                                            rel="bookmark"
-                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_title'] ?>">
+                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_title'] ?>">
                                             <img width=218 height=150 class=entry-thumb
-                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_main_image'] ?>"
-                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_title'] ?>"
-                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_title'] ?>"/>
+                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_main_image'] ?>"
+                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_title'] ?>"
+                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_title'] ?>"/>
                                         </a>
                                     </div>
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_CHUYEN_SAO]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_CHUYEN_SAO]['cate_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_WORLD]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_WORLD]['cate_id']]) ?>"
                                        class=td-post-category>
-                                        <?php echo $this->arrCategory[\My\General::CATEGORY_CHUYEN_SAO]['cate_name'] ?>
+                                        <?php echo $this->arrCategory[\My\General::CATEGORY_WORLD]['cate_name'] ?>
                                     </a>
                                 </div>
                                 <h3 class="entry-title td-module-title">
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_id']]) ?>"
                                        rel="bookmark"
-                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_title'] ?>">
-                                        <?php echo $this->arrContent[\My\General::CATEGORY_CHUYEN_SAO][0]['cont_title'] ?>
+                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_title'] ?>">
+                                        <?php echo $this->arrContent[\My\General::CATEGORY_WORLD][0]['cont_title'] ?>
                                     </a>
                                 </h3>
                             </div>
@@ -554,25 +554,25 @@ $arr_category = unserialize(ARR_CATEGORY)
                                 <div class=td-module-image>
                                     <div class=td-module-thumb>
                                         <a rel="nofollow"
-                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_id']]) ?>"
+                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_id']]) ?>"
                                            rel="bookmark"
-                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_title'] ?>">
+                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_title'] ?>">
                                             <img width=218 height=150 class=entry-thumb
-                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_main_image'] ?>"
-                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_title'] ?>"
-                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_title'] ?>"/>
+                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_main_image'] ?>"
+                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_title'] ?>"
+                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_title'] ?>"/>
                                         </a>
                                     </div>
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_DU_LICH]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_DU_LICH]['cate_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_SCIENCE]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_SCIENCE]['cate_id']]) ?>"
                                        class=td-post-category>
-                                        <?php echo $this->arrCategory[\My\General::CATEGORY_DU_LICH]['cate_name'] ?>
+                                        <?php echo $this->arrCategory[\My\General::CATEGORY_SCIENCE]['cate_name'] ?>
                                     </a>
                                 </div>
                                 <h3 class="entry-title td-module-title">
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_id']]) ?>"
                                        rel="bookmark"
-                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_title'] ?>">
-                                        <?php echo $this->arrContent[\My\General::CATEGORY_DU_LICH][0]['cont_title'] ?>
+                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_title'] ?>">
+                                        <?php echo $this->arrContent[\My\General::CATEGORY_SCIENCE][0]['cont_title'] ?>
                                     </a>
                                 </h3>
                             </div>
@@ -582,25 +582,25 @@ $arr_category = unserialize(ARR_CATEGORY)
                                 <div class=td-module-image>
                                     <div class=td-module-thumb>
                                         <a rel="nofollow"
-                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_id']]) ?>"
+                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_id']]) ?>"
                                            rel="bookmark"
-                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_title'] ?>">
+                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_title'] ?>">
                                             <img width=218 height=150 class=entry-thumb
-                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_main_image'] ?>"
-                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_title'] ?>"
-                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_title'] ?>"/>
+                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_main_image'] ?>"
+                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_title'] ?>"
+                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_title'] ?>"/>
                                         </a>
                                     </div>
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_THOI_TRANG]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_THOI_TRANG]['cate_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_SHOWBIZ]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_SHOWBIZ]['cate_id']]) ?>"
                                        class=td-post-category>
-                                        <?php echo $this->arrCategory[\My\General::CATEGORY_THOI_TRANG]['cate_name'] ?>
+                                        <?php echo $this->arrCategory[\My\General::CATEGORY_SHOWBIZ]['cate_name'] ?>
                                     </a>
                                 </div>
                                 <h3 class="entry-title td-module-title">
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_id']]) ?>"
                                        rel="bookmark"
-                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_title'] ?>">
-                                        <?php echo $this->arrContent[\My\General::CATEGORY_THOI_TRANG][0]['cont_title'] ?>
+                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_title'] ?>">
+                                        <?php echo $this->arrContent[\My\General::CATEGORY_SHOWBIZ][0]['cont_title'] ?>
                                     </a>
                                 </h3>
                             </div>
@@ -610,25 +610,25 @@ $arr_category = unserialize(ARR_CATEGORY)
                                 <div class=td-module-image>
                                     <div class=td-module-thumb>
                                         <a rel="nofollow"
-                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_id']]) ?>"
+                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_id']]) ?>"
                                            rel="bookmark"
-                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_title'] ?>">
+                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>">
                                             <img width=218 height=150 class=entry-thumb
-                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_main_image'] ?>"
-                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_title'] ?>"
-                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_title'] ?>"/>
+                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_main_image'] ?>"
+                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>"
+                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>"/>
                                         </a>
                                     </div>
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_LAM_DEP]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_LAM_DEP]['cate_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_NATURALLY_SAVVY]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_NATURALLY_SAVVY]['cate_id']]) ?>"
                                        class=td-post-category>
-                                        <?php echo $this->arrCategory[\My\General::CATEGORY_LAM_DEP]['cate_name'] ?>
+                                        <?php echo $this->arrCategory[\My\General::CATEGORY_NATURALLY_SAVVY]['cate_name'] ?>
                                     </a>
                                 </div>
                                 <h3 class="entry-title td-module-title">
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_id']]) ?>"
                                        rel="bookmark"
-                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_title'] ?>">
-                                        <?php echo $this->arrContent[\My\General::CATEGORY_LAM_DEP][0]['cont_title'] ?>
+                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>">
+                                        <?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>
                                     </a>
                                 </h3>
                             </div>
@@ -638,25 +638,25 @@ $arr_category = unserialize(ARR_CATEGORY)
                                 <div class=td-module-image>
                                     <div class=td-module-thumb>
                                         <a rel="nofollow"
-                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_id']]) ?>"
+                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_id']]) ?>"
                                            rel="bookmark"
-                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_title'] ?>">
+                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>">
                                             <img width=218 height=150 class=entry-thumb
-                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_main_image'] ?>"
-                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_title'] ?>"
-                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_title'] ?>"/>
+                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_main_image'] ?>"
+                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>"
+                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>"/>
                                         </a>
                                     </div>
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_MON_NGON]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_MON_NGON]['cate_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_NATURALLY_SAVVY]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_NATURALLY_SAVVY]['cate_id']]) ?>"
                                        class=td-post-category>
-                                        <?php echo $this->arrCategory[\My\General::CATEGORY_MON_NGON]['cate_name'] ?>
+                                        <?php echo $this->arrCategory[\My\General::CATEGORY_NATURALLY_SAVVY]['cate_name'] ?>
                                     </a>
                                 </div>
                                 <h3 class="entry-title td-module-title">
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_id']]) ?>"
                                        rel="bookmark"
-                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_title'] ?>">
-                                        <?php echo $this->arrContent[\My\General::CATEGORY_MON_NGON][0]['cont_title'] ?>
+                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>">
+                                        <?php echo $this->arrContent[\My\General::CATEGORY_NATURALLY_SAVVY][0]['cont_title'] ?>
                                     </a>
                                 </h3>
                             </div>
@@ -666,25 +666,25 @@ $arr_category = unserialize(ARR_CATEGORY)
                                 <div class=td-module-image>
                                     <div class=td-module-thumb>
                                         <a rel="nofollow"
-                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_id']]) ?>"
+                                           href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_id']]) ?>"
                                            rel="bookmark"
-                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>">
+                                           title="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>">
                                             <img width=218 height=150 class=entry-thumb
-                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_main_image'] ?>"
-                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>"
-                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>"/>
+                                                 src="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_main_image'] ?>"
+                                                 alt="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>"
+                                                 title="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>"/>
                                         </a>
                                     </div>
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_SUC_KHOE]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_SUC_KHOE]['cate_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('category', ['cateSlug' => $this->arrCategory[\My\General::CATEGORY_HEALTH]['cate_slug'], 'cateId' => $this->arrCategory[\My\General::CATEGORY_HEALTH]['cate_id']]) ?>"
                                        class=td-post-category>
-                                        <?php echo $this->arrCategory[\My\General::CATEGORY_SUC_KHOE]['cate_name'] ?>
+                                        <?php echo $this->arrCategory[\My\General::CATEGORY_HEALTH]['cate_name'] ?>
                                     </a>
                                 </div>
                                 <h3 class="entry-title td-module-title">
-                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_id']]) ?>"
+                                    <a href="<?php echo $this->serverUrl() . $this->Url('view-content', ['contentSlug' => $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_slug'], 'contentId' => $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_id']]) ?>"
                                        rel="bookmark"
-                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>">
-                                        <?php echo $this->arrContent[\My\General::CATEGORY_SUC_KHOE][0]['cont_title'] ?>
+                                       title="<?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>">
+                                        <?php echo $this->arrContent[\My\General::CATEGORY_HEALTH][0]['cont_title'] ?>
                                     </a>
                                 </h3>
                             </div>
