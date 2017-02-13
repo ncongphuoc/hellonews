@@ -45,6 +45,8 @@ class storageKeyword extends AbstractTableGateway {
             //
             if ($keyword_id) {
                 $instanceSearch = new \My\Search\Keyword();
+
+                $p_arrParams['key_id'] = $keyword_id;
                 $arrDocument = new \Elastica\Document($keyword_id, $p_arrParams);
                 $intResult = $instanceSearch->add($arrDocument);
             }

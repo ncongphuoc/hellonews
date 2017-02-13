@@ -4,6 +4,7 @@ namespace Backend\Controller;
 
 use My\General,
     My\Controller\MyController,
+    Zend\Dom\Query,
     Sunra\PhpSimple\HtmlDomParser;
 
 class ConsoleController extends MyController
@@ -60,236 +61,12 @@ class ConsoleController extends MyController
             case 'category' :
                 $this->__migrateCategory($intIsCreateIndex);
                 break;
-
-            case 'user' :
-                $this->__migrateUser($intIsCreateIndex);
-                break;
-
-            case 'general' :
-                $this->__migrateGeneral($intIsCreateIndex);
-                break;
             case 'keyword' :
                 $this->__migrateKeyword($intIsCreateIndex);
-                break;
-            case 'group' :
-                $this->__migrateGroup($intIsCreateIndex);
-                break;
-            case 'permission' :
-                $this->__migratePermission($intIsCreateIndex);
-                break;
-            case 'all-table' :
-                $instanceSearch = new \My\Search\Logs();
-                $instanceSearch->createIndex();
-                $instanceSearch = new \My\Search\Content();
-                $instanceSearch->createIndex();
-                $instanceSearch = new \My\Search\Category();
-                $instanceSearch->createIndex();
-                $instanceSearch = new \My\Search\User();
-                $instanceSearch->createIndex();
-                $instanceSearch = new \My\Search\Keyword();
-                $instanceSearch->createIndex();
-                $instanceSearch = new \My\Search\GeneralSearch();
-                $instanceSearch->createIndex();
-                $instanceSearch = new \My\Search\Group();
-                $instanceSearch->createIndex();
-                $instanceSearch = new \My\Search\Permission();
-                $instanceSearch->createIndex();
                 break;
         }
         echo General::getColoredString("Index ES sucess", 'light_cyan', 'yellow');
         return true;
-    }
-
-    public function __migratePermission($intIsCreateIndex)
-    {
-        $service = $this->serviceLocator->get('My\Models\Permission');
-        $intLimit = 1000;
-        $instanceSearch = new \My\Search\Permission();
-
-        for ($intPage = 1; $intPage < 10000; $intPage++) {
-            $arrList = $service->getListLimit([], $intPage, $intLimit, 'perm_id ASC');
-
-            if (empty($arrList)) {
-                break;
-            }
-
-            if ($intPage == 1) {
-                if ($intIsCreateIndex) {
-                    $instanceSearch->createIndex();
-                } else {
-                    $result = $instanceSearch->removeAllDoc();
-                    if (empty($result)) {
-                        $this->flush();
-                        return General::getColoredString("Cannot delete old search index \n", 'light_cyan', 'red');
-                    }
-                }
-            }
-            $arrDocument = [];
-            foreach ($arrList as $arr) {
-                $id = (int)$arr['perm_id'];
-
-                $arrDocument[] = new \Elastica\Document($id, $arr);
-                echo General::getColoredString("Created new document with id = " . $id . " Successfully", 'cyan');
-
-                $this->flush();
-            }
-
-            unset($arrList); //release memory
-            echo General::getColoredString("Migrating " . count($arrDocument) . " documents, please wait...", 'yellow');
-            $this->flush();
-
-            $instanceSearch->add($arrDocument);
-            echo General::getColoredString("Migrated " . count($arrDocument) . " documents successfully", 'blue', 'cyan');
-
-            unset($arrDocument);
-            $this->flush();
-        }
-
-        die('done');
-    }
-
-    public function __migrateGroup($intIsCreateIndex)
-    {
-        $service = $this->serviceLocator->get('My\Models\Group');
-        $intLimit = 1000;
-        $instanceSearch = new \My\Search\Group();
-
-        for ($intPage = 1; $intPage < 10000; $intPage++) {
-            $arrList = $service->getListLimit([], $intPage, $intLimit, 'group_id ASC');
-
-            if (empty($arrList)) {
-                break;
-            }
-
-            if ($intPage == 1) {
-                if ($intIsCreateIndex) {
-                    $instanceSearch->createIndex();
-                } else {
-                    $result = $instanceSearch->removeAllDoc();
-                    if (empty($result)) {
-                        $this->flush();
-                        return General::getColoredString("Cannot delete old search index \n", 'light_cyan', 'red');
-                    }
-                }
-            }
-            $arrDocument = [];
-            foreach ($arrList as $arr) {
-                $id = (int)$arr['group_id'];
-
-                $arrDocument[] = new \Elastica\Document($id, $arr);
-                echo General::getColoredString("Created new document with id = " . $id . " Successfully", 'cyan');
-
-                $this->flush();
-            }
-
-            unset($arrList); //release memory
-            echo General::getColoredString("Migrating " . count($arrDocument) . " documents, please wait...", 'yellow');
-            $this->flush();
-
-            $instanceSearch->add($arrDocument);
-            echo General::getColoredString("Migrated " . count($arrDocument) . " documents successfully", 'blue', 'cyan');
-
-            unset($arrDocument);
-            $this->flush();
-        }
-
-        die('done');
-    }
-
-    public function __migrateGeneral($intIsCreateIndex)
-    {
-        $service = $this->serviceLocator->get('My\Models\GeneralBqn');
-        $intLimit = 1000;
-        $instanceSearch = new \My\Search\GeneralSearch();
-
-        for ($intPage = 1; $intPage < 10000; $intPage++) {
-            $arrList = $service->getListLimit([], $intPage, $intLimit, 'gene_id ASC');
-
-            if (empty($arrList)) {
-                break;
-            }
-
-            if ($intPage == 1) {
-                if ($intIsCreateIndex) {
-                    $instanceSearch->createIndex();
-                } else {
-                    $result = $instanceSearch->removeAllDoc();
-                    if (empty($result)) {
-                        $this->flush();
-                        return General::getColoredString("Cannot delete old search index \n", 'light_cyan', 'red');
-                    }
-                }
-            }
-            $arrDocument = [];
-            foreach ($arrList as $arr) {
-                $id = (int)$arr['gene_id'];
-
-                $arrDocument[] = new \Elastica\Document($id, $arr);
-                echo General::getColoredString("Created new document with id = " . $id . " Successfully", 'cyan');
-
-                $this->flush();
-            }
-
-            unset($arrList); //release memory
-            echo General::getColoredString("Migrating " . count($arrDocument) . " documents, please wait...", 'yellow');
-            $this->flush();
-
-            $instanceSearch->add($arrDocument);
-            echo General::getColoredString("Migrated " . count($arrDocument) . " documents successfully", 'blue', 'cyan');
-
-            unset($arrDocument);
-            $this->flush();
-        }
-
-        die('done');
-    }
-
-    public function __migrateUser($intIsCreateIndex)
-    {
-        $service = $this->serviceLocator->get('My\Models\User');
-        $intLimit = 1000;
-        $instanceSearch = new \My\Search\User();
-
-        for ($intPage = 1; $intPage < 10000; $intPage++) {
-            $arrList = $service->getListLimit([], $intPage, $intLimit, 'user_id ASC');
-
-            if (empty($arrList)) {
-                break;
-            }
-
-            if ($intPage == 1) {
-                if ($intIsCreateIndex) {
-                    $instanceSearch->createIndex();
-                } else {
-                    $result = $instanceSearch->removeAllDoc();
-                    if (empty($result)) {
-                        $this->flush();
-                        return General::getColoredString("Cannot delete old search index \n", 'light_cyan', 'red');
-                    }
-                }
-            }
-            $arrDocument = [];
-            foreach ($arrList as $arr) {
-                $id = (int)$arr['user_id'];
-
-                $arrDocument[] = new \Elastica\Document($id, $arr);
-                echo General::getColoredString("Created new document with id = " . $id . " Successfully", 'cyan');
-
-                $this->flush();
-            }
-
-            unset($arrList); //release memory
-            echo General::getColoredString("Migrating " . count($arrDocument) . " documents, please wait...", 'yellow');
-            $this->flush();
-
-            $instanceSearch->add($arrDocument);
-            echo General::getColoredString("Migrated " . count($arrDocument) . " documents successfully", 'blue', 'cyan');
-
-            unset($arrDocument);
-            $this->flush();
-        }
-
-        die('done');
     }
 
     public function __migrateCategory($intIsCreateIndex)
@@ -331,52 +108,6 @@ class ConsoleController extends MyController
             $this->flush();
 
             $instanceSearch->add($arrDocument);
-            echo General::getColoredString("Migrated " . count($arrDocument) . " documents successfully", 'blue', 'cyan');
-
-            unset($arrDocument);
-            $this->flush();
-        }
-
-        die('done');
-    }
-
-    public function __migrateLogs($intIsCreateIndex)
-    {
-        $serviceLogs = $this->serviceLocator->get('My\Models\Logs');
-        $intLimit = 1000;
-        $instanceSearchLogs = new \My\Search\Logs();
-        for ($intPage = 1; $intPage < 10000; $intPage++) {
-            $arrLogsList = $serviceLogs->getListLimit([], $intPage, $intLimit, 'log_id ASC');
-            if (empty($arrLogsList)) {
-                break;
-            }
-
-            if ($intPage == 1) {
-                if ($intIsCreateIndex) {
-                    $instanceSearchLogs->createIndex();
-                } else {
-                    $result = $instanceSearchLogs->removeAllDoc();
-                    if (empty($result)) {
-                        $this->flush();
-                        return General::getColoredString("Cannot delete old search index \n", 'light_cyan', 'red');
-                    }
-                }
-            }
-            $arrDocument = [];
-            foreach ($arrLogsList as $arrLogs) {
-                $logId = (int)$arrLogs['log_id'];
-
-                $arrDocument[] = new \Elastica\Document($logId, $arrLogs);
-                echo General::getColoredString("Created new document with log_id = " . $logId . " Successfully", 'cyan');
-
-                $this->flush();
-            }
-
-            unset($arrLogsList); //release memory
-            echo General::getColoredString("Migrating " . count($arrDocument) . " documents, please wait...", 'yellow');
-            $this->flush();
-
-            $instanceSearchLogs->add($arrDocument);
             echo General::getColoredString("Migrated " . count($arrDocument) . " documents successfully", 'blue', 'cyan');
 
             unset($arrDocument);
@@ -813,7 +544,10 @@ class ConsoleController extends MyController
                 $key_match = $keyword . $value;
                 $url = 'http://www.google.com/complete/search?output=search&client=chrome&q=' . rawurlencode($key_match) . '&hl=vi&gl=vn';
                 $return = General::crawler($url);
-                $this->add_keyword(json_decode($return)[1], $arr_keyword);
+                //
+                $list_keyword = json_decode($return)[1];
+//print_r($list_keyword);die;
+                $this->add_keyword($list_keyword, $arr_keyword);
                 continue;
             } else {
                 for ($i = 0; $i < 2; $i++) {
@@ -828,7 +562,7 @@ class ConsoleController extends MyController
                     continue;
                 }
             }
-            sleep(1);
+            sleep(3);
         };
 
         $serviceKeyword = $this->serviceLocator->get('My\Models\Keyword');
@@ -839,7 +573,7 @@ class ConsoleController extends MyController
             echo \My\General::getColoredString("Crawler success keyword_id = {$arr_keyword['key_id']}", 'green');
         }
 
-        sleep(1);
+        sleep(3);
         $this->getKeyword();
     }
 
@@ -856,7 +590,7 @@ class ConsoleController extends MyController
 
             $word_slug = trim(General::getSlug($key_word));
             $is_exsit = $instanceSearchKeyWord->getDetail(['key_slug' => $word_slug]);
-
+//print_r($is_exsit);die;
             if ($is_exsit) {
                 echo \My\General::getColoredString("Exsit keyword: " . $word_slug, 'red');
                 continue;
@@ -1120,37 +854,42 @@ class ConsoleController extends MyController
 //        $instanceSearchCategory = new \My\Search\Category();
 //        $arr_category = $instanceSearchCategory->getList(['cate_status' => 1], [], ['cate_id' => ['order' => 'asc']]);
 
-        $arr_category = [6, 1, 2, 3, 5, 7, 4];
+        $arr_index = [1,2,3,4,5,6,7,8];
         for ($i = 1; $i < 2; $i++) {
-            foreach ($arr_category as $cate_id) {
-                switch ($cate_id) {
+            foreach ($arr_index as $index) {
+                switch ($index) {
+//                    case 1:
+//                        $url = 'http://news.sky.com';
+//                        $this->__skynewsCrawler($url, 1);
+//                        break;
+//                    case 2:
+//                        $url = 'http://www.foxnews.com/entertainment.html';
+//                        $this->__foxnewsCrawler($url, 2);
+//                        break;
                     case 1:
-                        if ($i > 0 && $i < 11) {
-                            $this->__skynewsCrawler($i,'http://news.sky.com', $cate_id);
-                        }
+                        $this->urlKidspot('baby_page', $i);
                         break;
                     case 2:
-                        $this->__foxnewsCrawler($i, 'http://www.foxnews.com/entertainment.html', $cate_id);
+                        $this->__naturallyCrawler($i, 'http://naturallysavvy.com/eat', 5);
                         break;
                     case 3:
-                        $this->__afamilyCrawler($i, 'http://afamily.vn/suc-khoe', $cate_id);
-                        $this->__emdepCrawler($i, 'http://emdep.vn/song-khoe', $cate_id);
+                        $this->urlKidspot('parent', $i);
                         break;
                     case 4:
-                        $this->__afamilyCrawler($i, 'http://afamily.vn/dep', $cate_id);
-                        $this->__emdepCrawler($i, 'http://emdep.vn/lam-dep', $cate_id);
+                        $url = 'https://www.newscientist.com/subject/health/page/';
+                        $this->__newscientistCrawler($i, $url, 4);
                         break;
                     case 5:
-                        if ($i > 0 && $i < 11) {
-                            $this->__24hCrawler($i, $cate_id);
-                        }
-                        $this->__emdepCrawler($i, 'http://emdep.vn/mon-ngon', $cate_id);
+                        $this->urlKidspot('pregnancy', $i);
                         break;
                     case 6:
-                        $this->__emdepCrawler($i, 'http://emdep.vn/lam-me', $cate_id);
+                        $this->__naturallyCrawler($i, 'http://naturallysavvy.com/nest', 5);
                         break;
                     case 7:
-                        $this->__ivivuCrawler($i, $cate_id);
+                        $this->urlKidspot('something', $i);
+                        break;
+                    case 8:
+                        $this->__naturallyCrawler($i, 'http://naturallysavvy.com/care', 5);
                         break;
                 }
             }
@@ -1161,7 +900,7 @@ class ConsoleController extends MyController
         echo \My\General::getColoredString("DONE time: " . date('H:i:s'), 'light_cyan');
     }
 
-    public function __skynewsCrawler($page, $url, $cate_id)
+    public function __skynewsCrawler($url, $cate_id)
     {
         $instanceSearchContent = new \My\Search\Content();
         $upload_dir = General::mkdirUpload();
@@ -1393,18 +1132,15 @@ class ConsoleController extends MyController
         die("done");
     }
 
-    public function testCrawlerAction($page, $url, $cate_id)
+    public function __naturallyCrawler($page, $url, $cate_id)
     {
-        $cate_id = 3;
-        $page = 1;
-        $url = 'http://www.livescience.com/news/';
         $instanceSearchContent = new \My\Search\Content();
         $upload_dir = General::mkdirUpload();
 
-        $url_page = $url . $page;
+        $url_page = $url . '?page=' . $page;
         $content = General::crawler($url_page);
         $dom = HtmlDomParser::str_get_html($content);
-        $results = $dom->find('div.contentListing li.search-item h2 a');
+        $results = $dom->find('div.ArticleListing ul li.Article h2 a');
 
         if (count($results) <= 0) {
             return;
@@ -1412,8 +1148,8 @@ class ConsoleController extends MyController
 
         foreach ($results as $key => $item) {
 
-            //$content = General::crawler('http://www.livescience.com/' . $item->href);
-            $content = General::crawler('http://www.livescience.com/57537-2016-was-hottest-year-on-record.html');
+            $content = General::crawler('http://naturallysavvy.com' . $item->href);
+            //$content = General::crawler('http://naturallysavvy.com/eat/healthy-super-bowl-snacks');
 
             if ($content == false) {
                 continue;
@@ -1421,9 +1157,9 @@ class ConsoleController extends MyController
             $html = HtmlDomParser::str_get_html($content);
 
             $arr_data = array();
-            if ($html->find('.article-content', 0)) {
+            if ($html->find('.ArticleDetails .Media', 0)) {
 
-                $cont_title = html_entity_decode($html->find("#content-block h1.h1", 0)->plaintext);
+                $cont_title = html_entity_decode($html->find(".ArticleDetails h1", 0)->plaintext);
                 $arr_data['cont_title'] = $cont_title;
                 $arr_data['cont_slug'] = General::getSlug($cont_title);
 
@@ -1434,30 +1170,42 @@ class ConsoleController extends MyController
                         'not_cont_status' => -1
                     )
                 );
-//                if (!empty($arr_detail)) {
-//                    echo \My\General::getColoredString("Exist this content:" . $arr_data['cont_slug'], 'red');
-//                    continue;
-//                }
+                if (!empty($arr_detail)) {
+                    echo \My\General::getColoredString("Exist this content:" . $arr_data['cont_slug'], 'red');
+                    continue;
+                }
 
                 //get content detail
-                $cont_description = $html->find('div.article-content p', 0)->plaintext;
+                $cont_description = $html->find('.ArticleDetails .Media p', 1)->plaintext;
+                $cont_description = strip_tags(mb_substr($cont_description, 0, 300, 'UTF-8'));
 
-                $html->find('div.article-content #in-article-1', 0)->outertext = '';
-                $html->find('div.article-content #in-article-2', 0)->outertext = '';
-                $html->find('div.article-content #m-in-article-1', 0)->outertext = '';
-                $html->find('div.article-content #m-in-article-2', 0)->outertext = '';
-                $html->find('div.article-content #m-in-article-3', 0)->outertext = '';
-                $html->find('.text-conent .baiviet-bailienquan', 0)->outertext = '';
-                $cont_detail = $html->find('.article-content', 0)->outertext;
+                $html->find('.ArticleDetails .Media .adsbygoogle', 0)->outertext = '';
+                $html->find('.ArticleDetails .Media script', 0)->outertext = '';
+                $html->find('.ArticleDetails .Media p a img', 0)->outertext = '';
 
+                $cont_detail = $html->find('.ArticleDetails .Media', 0)->outertext;
+
+                $link_content = $html->find(".ArticleDetails .Media a");
+                if (count($link_content) > 0) {
+                    foreach ($link_content as $key => $link) {
+                        $href = $link->href;
+                        $cont_detail = str_replace($href, BASE_URL . '/category/naturally-savvy-5.html', $cont_detail);
+                    }
+                }
 
                 //get image
                 $arr_data['cont_main_image'] = STATIC_URL . '/f/v1/images/no-image-available.jpg';
                 $arr_data['cont_resize_image'] = STATIC_URL . '/f/v1/images/no-image-available.jpg';
-                $arr_image = $html->find("div.article-body img");
+                $arr_image = $html->find(".ArticleDetails .Media img");
                 if (count($arr_image) > 0) {
+
+                    $url_image_ads = 'http://cdn.agilitycms.com/naturally-savvy/Images/Articles/SpecialButtons';
                     foreach ($arr_image as $key => $img) {
                         $src = $img->src;
+                        if (strpos($src, $url_image_ads) !== false) {
+                            continue;
+                        }
+
                         $extension = end(explode('.', end(explode('/', $src))));
                         $extension = current(explode('?', $extension));
                         $name_img = $arr_data['cont_slug'] . '_' . ($key + 1) . '.' . $extension;
@@ -1487,7 +1235,7 @@ class ConsoleController extends MyController
                 $arr_data['cate_id'] = $cate_id;
                 $arr_data['cont_views'] = 0;
                 $arr_data['cont_status'] = 1;
-                $arr_data['from_source'] = '24h';
+                $arr_data['from_source'] = 'http://naturallysavvy.com/';
 
                 //insert Data
                 $serviceContent = $this->serviceLocator->get('My\Models\Content');
@@ -1499,23 +1247,21 @@ class ConsoleController extends MyController
                     echo \My\General::getColoredString("Can not insert content db", 'red');
                 }
             }
-            die("done");
             sleep(2);
         }
 
         die("done");
     }
 
-    public function __ivivuCrawler($page, $cate_id)
+    public function __newscientistCrawler($page, $url, $cate_id)
     {
-        $url = 'https://www.ivivu.com/blog/category/viet-nam/';
         $instanceSearchContent = new \My\Search\Content();
         $upload_dir = General::mkdirUpload();
 
-        $url_page = $url . '/page/' . $page . '/';
+        $url_page = $url . $page;
         $content = General::crawler($url_page);
         $dom = HtmlDomParser::str_get_html($content);
-        $results = $dom->find('div.archive-postlist h2 a');
+        $results = $dom->find('div.article-content div.article-index-row .index-entry h2 a');
 
         if (count($results) <= 0) {
             return;
@@ -1523,7 +1269,7 @@ class ConsoleController extends MyController
 
         foreach ($results as $key => $item) {
             $content = General::crawler($item->href);
-            //$content = curl('http://afamily.vn/day-con-biet-boi-ngay-tai-nha-chi-voi-4-buoc-don-gian-2016060811132636.chn');
+            //$content = General::crawler('https://www.newscientist.com/article/2120747-women-with-a-thicker-brain-cortex-are-more-likely-to-have-autism/');
 
             if ($content == false) {
                 continue;
@@ -1531,9 +1277,9 @@ class ConsoleController extends MyController
             $html = HtmlDomParser::str_get_html($content);
 
             $arr_data = array();
-            if ($html->find('.entry-content', 0)) {
+            if ($html->find('.article-content', 0)) {
 
-                $cont_title = html_entity_decode($html->find("h1.entry-title", 0)->plaintext);
+                $cont_title = html_entity_decode($html->find("h1.article-title", 0)->plaintext);
                 $arr_data['cont_title'] = $cont_title;
                 $arr_data['cont_slug'] = General::getSlug($cont_title);
 
@@ -1544,46 +1290,32 @@ class ConsoleController extends MyController
                         'not_cont_status' => -1
                     )
                 );
+
                 if (!empty($arr_detail)) {
                     echo \My\General::getColoredString("Exist this content:" . $arr_data['cont_slug'], 'red');
                     continue;
                 }
-                $cont_description = '';
 
-                //get content detail
-                $html->find('.entry-content .top-sns-wrap', 0)->innertext = '';
-                //$html->find('.entry-content .ltt-contentbox', 0)-> innertext = '';
-                $check = true;
-                $i = 0;
-                while ($check) {
-                    $html->find(".entry-content .ltt-contentbox", $i)->innertext = '';
-                    $i++;
-                    if ($html->find(".entry-content .ltt-contentbox", $i)) {
-                        $check = true;
-                    } else {
-                        $check = false;
-                    }
-                }
-                $html->find('.entry-content .author', 0)->innertext = '';
-                $html->find('.entry-content .updated', 0)->innertext = '';
-                $html->find('.entry-content .post-rating-wrap', 0)->innertext = '';
-                $html->find('.entry-content .bottom-like-share', 0)->innertext = '';
-                $cont_detail = $html->find('.entry-content', 0)->outertext;
+                $cont_description = $html->find('.article-content p', 2)->plaintext;
+                $cont_description = strip_tags(mb_substr($cont_description, 0, 300, 'UTF-8'));
 
-                $cont_detail = str_replace('Cẩm nang du lịch iVIVU.com', 'Cẩm nang du lịch', $cont_detail);
-                $cont_detail = str_replace('iVIVU.com', 'Tintuc360', $cont_detail);
-                $cont_detail = str_replace('IVIVU.COM', 'Tintuc360', $cont_detail);
-                $link_content = $html->find("div.entry-content a");
+                $html->find('.article-content section.article-topics', 0)->outertext = '';
+
+                $cont_detail = $html->find('.article-content', 0)->outertext;
+
+                $link_content = $html->find("div.article-content a");
                 if (count($link_content) > 0) {
                     foreach ($link_content as $key => $link) {
                         $href = $link->href;
-                        $cont_detail = str_replace($href, BASE_URL . '/danh-muc/du-lich-7.html', $cont_detail);
+                        $cont_detail = str_replace($href, BASE_URL . '/category/health-4.html', $cont_detail);
                     }
                 }
+
                 //get image
-                $arr_data['cont_main_image'] = 'https://static.tintuc360.me/f/v1/images/no-image-available.jpg';
-                $arr_data['cont_resize_image'] = 'https://static.tintuc360.me/f/v1/images/no-image-available.jpg';
-                $arr_image = $html->find("div.entry-content img");
+                $arr_data['cont_main_image'] = STATIC_URL . '/f/v1/images/no-image-available.jpg';
+                $arr_data['cont_resize_image'] = STATIC_URL . '/f/v1/images/no-image-available.jpg';
+
+                $arr_image = $html->find("div.article-content img");
                 if (count($arr_image) > 0) {
                     foreach ($arr_image as $key => $img) {
                         $src = $img->src;
@@ -1593,7 +1325,7 @@ class ConsoleController extends MyController
                         if($image_content) {
                             file_put_contents($upload_dir['path'] . '/' . $name_img, $image_content);
                         } else {
-                            $image_content = General::crawler('https://static.tintuc360.me/f/v1/images/no-image-available.jpg');
+                            $image_content = General::crawler(STATIC_URL . '/f/v1/images/no-image-available.jpg');
                             file_put_contents($upload_dir['path'] . '/' . $name_img, $image_content);
                         }
                         $cont_detail = str_replace($src, $upload_dir['url'] . '/' . $name_img, $cont_detail);
@@ -1615,7 +1347,7 @@ class ConsoleController extends MyController
                 $arr_data['cate_id'] = $cate_id;
                 $arr_data['cont_views'] = 0;
                 $arr_data['cont_status'] = 1;
-                $arr_data['from_source'] = 'ivivu';
+                $arr_data['from_source'] = 'newscientist';
 
                 //insert Data
                 $serviceContent = $this->serviceLocator->get('My\Models\Content');
@@ -1629,28 +1361,99 @@ class ConsoleController extends MyController
             }
             sleep(2);
         }
+        return true;
     }
 
-    public function __kenh14Crawler($page, $cate_id)
+    public function urlKidspot($type, $page) {
+        $cate_id = 6;
+
+//        $baby = array(
+//            'http://www.kidspot.com.au/baby/newborn/newborn-development',
+//            'http://www.kidspot.com.au/baby/newborn/newborn-sleep',
+//            'http://www.kidspot.com.au/baby/newborn/new-parents',
+//            'http://www.kidspot.com.au/baby/newborn/newborn-care',
+//            'http://www.kidspot.com.au/baby/baby-care/bathing-and-body-care',
+//            'http://www.kidspot.com.au/baby/baby-care/ask-the-child-health-nurse',
+//            'http://www.kidspot.com.au/baby/baby-development/routines'
+//        );
+
+        //10
+        if($page < 10 && $type == 'baby_page') {
+            $baby_page = array(
+                'http://www.kidspot.com.au/baby/baby-care/crying-and-colic',
+                'http://www.kidspot.com.au/baby/baby-care/nappies-and-bottom-care',
+                'http://www.kidspot.com.au/baby/baby-care/baby-sleep-and-settling',
+                'http://www.kidspot.com.au/baby/baby-development/baby-behaviour',
+                'http://www.kidspot.com.au/baby/baby-development/milestones',
+                'http://www.kidspot.com.au/baby/baby-development/social-and-emotional'
+            );
+
+            foreach ($baby_page as $url) {
+                $this->__kidspotCrawler($page, $url, $cate_id);
+            }
+        }
+
+        //5
+        if($page < 5 && $type == 'parent') {
+            $parent = array(
+                'http://www.kidspot.com.au/parenting/parenthood/dads',
+                'http://www.kidspot.com.au/parenting/parenthood/divorce-and-separation',
+                'http://www.kidspot.com.au/parenting/parenthood/siblings',
+                'http://www.kidspot.com.au/parenting/parenthood/discipline',
+            );
+            foreach ($parent as $url) {
+                $this->__kidspotCrawler($page, $url, $cate_id);
+            }
+        }
+
+        //6
+        if($page < 5 && $type == 'pregnancy') {
+            $pregnancy = array(
+                'http://www.kidspot.com.au/birth/pregnancy/signs-and-symptoms',
+                'http://www.kidspot.com.au/birth/pregnancy/pregnancy-testing',
+                'http://www.kidspot.com.au/birth/pregnancy/miscarriage',
+                'http://www.kidspot.com.au/birth/pregnancy/foetal-health'
+            );
+            foreach ($pregnancy as $url) {
+                $this->__kidspotCrawler($page, $url, $cate_id);
+            }
+        }
+
+        //22
+        if($page < 22 && $type == 'something') {
+            $something = array(
+                'http://www.kidspot.com.au/birth/pregnancy/pregnancy-health',
+                'http://www.kidspot.com.au/parenting/parenthood/mums',
+            );
+            foreach ($something as $url) {
+                $this->__kidspotCrawler($page, $url, $cate_id);
+            }
+        }
+        return;
+    }
+
+    public function __kidspotCrawler($page, $url, $cate_id)
     {
-        $url = 'http://kenh14.vn/star.chn';
 
         $instanceSearchContent = new \My\Search\Content();
         $upload_dir = General::mkdirUpload();
 
         $url_page = $url;
+        if($page =! 0) {
+            $url_page = $url . '?page=' . $page;
+        }
 
         $content = General::crawler($url_page);
         $dom = HtmlDomParser::str_get_html($content);
-        $results = $dom->find('li.ktncli h3.ktncli-title a,li.knswli h3.knswli-title a');
+        $results = $dom->find('div.main-content .articles-list .articles-list-image a');
 
         if (count($results) <= 0) {
             return;
         }
         $results = array_reverse($results);
         foreach ($results as $key => $item) {
-            $content = General::crawler('http://kenh14.vn' . $item->href);
-            //$content = curl('http://afamily.vn/day-con-biet-boi-ngay-tai-nha-chi-voi-4-buoc-don-gian-2016060811132636.chn');
+            $content = General::crawler('http://www.kidspot.com.au' . $item->href);
+            //$content = General::crawler('http://www.kidspot.com.au/baby/baby-care/bathing-and-body-care/the-homemade-breast-milk-lotion-every-new-mum-needs-to-make');
 
             if ($content == false) {
                 continue;
@@ -1658,9 +1461,9 @@ class ConsoleController extends MyController
             $html = HtmlDomParser::str_get_html($content);
 
             $arr_data = array();
-            if ($html->find('.knc-content', 0)) {
+            if ($html->find('.article-body', 0)) {
 
-                $cont_title = html_entity_decode($html->find("h1.kbwc-title", 0)->plaintext);
+                $cont_title = html_entity_decode($html->find("h1.content-title", 0)->plaintext);
                 $arr_data['cont_title'] = $cont_title;
                 $arr_data['cont_slug'] = General::getSlug($cont_title);
 
@@ -1676,34 +1479,34 @@ class ConsoleController extends MyController
                     continue;
                 }
 
-                $cont_description = $html->find('h2.knc-sapo', 0)->plaintext;
-                $cont_detail = $html->find('.knc-content', 0)->outertext;
-                $cont_detail = str_replace('VCSortableInPreviewMode', '', $cont_detail);
+                $cont_description = $html->find('p.article-summary', 0)->plaintext;
 
-//                    $link_content = $html->find("div.article-content a");
-//                    if (count($link_content) > 0) {
-//                        foreach ($link_content as $key => $link) {
-//                            $href = $link->href;
-//                            $cont_detail = str_replace('VCSortableInPreviewMode', '', $cont_detail);
-//                        }
-//                    }
+
+                $html->find('.article-body . ad-block', 0)->outertext = '';
+                $cont_detail = $html->find('.article-body', 0)->outertext;
+
                 //get image
-                $arr_data['cont_main_image'] = 'https://static.tintuc360.me/f/v1/images/no-image-available.jpg';
-                $arr_data['cont_resize_image'] = 'https://static.tintuc360.me/f/v1/images/no-image-available.jpg';
-                $arr_image = $html->find("div.knc-content img");
+                $arr_data['cont_main_image'] = STATIC_URL . '/f/v1/images/no-image-available.jpg';
+                $arr_data['cont_resize_image'] = STATIC_URL . '/f/v1/images/no-image-available.jpg';
+
+                $arr_image = $html->find(".main-content img.show");
+
                 if (count($arr_image) > 0) {
                     foreach ($arr_image as $key => $img) {
                         $src = $img->src;
+
                         $extension = end(explode('.', end(explode('/', $src))));
                         $name_img = $arr_data['cont_slug'] . '_' . ($key + 1) . '.' . $extension;
-                        $image_content = General::crawler($src);
+                        $image_content = General::crawler('http:' . $src);
+
                         if($image_content) {
                             file_put_contents($upload_dir['path'] . '/' . $name_img, $image_content);
                         } else {
-                            $image_content = General::crawler('https://static.tintuc360.me/f/v1/images/no-image-available.jpg');
+                            $image_content = General::crawler(STATIC_URL . '/f/v1/images/no-image-available.jpg');
                             file_put_contents($upload_dir['path'] . '/' . $name_img, $image_content);
                         }
                         $cont_detail = str_replace($src, $upload_dir['url'] . '/' . $name_img, $cont_detail);
+
                         if ($key == 0) {
                             $arr_data['cont_main_image'] = $upload_dir['url'] . '/' . $name_img;
                             $arr_data['cont_resize_image'] = $upload_dir['url'] . '/' . $name_img;
@@ -1722,7 +1525,7 @@ class ConsoleController extends MyController
                 $arr_data['cate_id'] = $cate_id;
                 $arr_data['cont_views'] = 0;
                 $arr_data['cont_status'] = 1;
-                $arr_data['from_source'] = 'kenh14';
+                $arr_data['from_source'] = 'kidspot';
 
                 //insert Data
                 $serviceContent = $this->serviceLocator->get('My\Models\Content');
@@ -1736,6 +1539,8 @@ class ConsoleController extends MyController
             }
             sleep(2);
         }
+
+        return true;
     }
 
     public function afamilyCrawlerKeyword($page, $url, $cate_id)
@@ -2119,7 +1924,8 @@ class ConsoleController extends MyController
         $instanceSearchKeyword = new \My\Search\Keyword();
         $serviceKeyword = $this->serviceLocator->get('My\Models\Keyword');
         //
-        $arr_keyword = $instanceSearchKeyword->getListLimit(['content_crawler' => 1], 1, 100, ['key_id' => ['order' => 'asc']]);
+        $limit = 100;
+        $arr_keyword = $instanceSearchKeyword->getListLimit(['content_crawler' => 1], 1, $limit, ['key_id' => ['order' => 'asc']]);
 
         foreach($arr_keyword as $keyword) {
             //$url = 'http://coccoc.com/composer?q=' . rawurlencode($keyword['key_name']) . '&p=0&reqid=UqRAi2nK&_=1480603345568';
@@ -2127,13 +1933,13 @@ class ConsoleController extends MyController
             $url = 'https://www.google.com.vn/search?sclient=psy-ab&biw=1366&bih=212&espv=2&q=' . rawurlencode($keyword['key_name']) . '&oq=' . rawurlencode($keyword['key_name']);
 
             $content = General::crawler($url);
-            $dom = HtmlDomParser::str_get_html($content);
-            $results = $dom->find('span.st');
+            $dom = new Query($content);
+            $results = $dom->execute('span.st');
 
             $arr_content_crawler = array();
             foreach ($results as $item) {
                 $arr_item = array(
-                    'description' => $item->plaintext
+                    'description' => $item->textContent
                 );
 
                 $arr_content_crawler[] = $arr_item;
@@ -2143,7 +1949,7 @@ class ConsoleController extends MyController
                 'content_crawler' => json_encode($arr_content_crawler)
             );
             $serviceKeyword->edit($arr_update, $keyword['key_id']);
-            sleep(rand(4, 10));
+            sleep(rand(6, 10));
         }
         $this->flush();
         unset($arr_keyword);
@@ -2231,6 +2037,9 @@ class ConsoleController extends MyController
                 case 'getcontent':
                     shell_exec('php ' . PUBLIC_PATH . '/index.php getcontent --pid=' . current($current_PID));
                     break;
+                case 'crawlerkeyword':
+                    shell_exec('php ' . PUBLIC_PATH . '/index.php crawlerkeyword --pid=' . current($current_PID));
+                    break;
             }
         }
 
@@ -2276,5 +2085,19 @@ class ConsoleController extends MyController
         }
 
         die("done");
+    }
+
+
+    public function testAction() {
+        $url_page = 'http://www.kidspot.com.au/baby/baby-development/baby-behaviour?page=5';
+        $content = General::crawler($url_page);
+        $dom = HtmlDomParser::str_get_html($content);
+        $results = $dom->find('div.main-content .articles-list .articles-list-image a');
+
+        if (count($results) <= 0) {
+            die("sss");
+            return;
+        }
+        die("abcd");
     }
 }

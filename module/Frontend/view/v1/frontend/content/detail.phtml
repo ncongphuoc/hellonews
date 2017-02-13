@@ -3,6 +3,7 @@ $content_detail = $this->arrContent;
 $category_detail = $this->arrCategoryDetail;
 $arrKeywordList = $this->arrKeywordList;
 $list_category = unserialize(ARR_CATEGORY);
+$show_main_img = array(\My\General::CATEGORY_SHOWBIZ, \My\General::CATEGORY_WORLD, \My\General::CATEGORY_MON_AND_BABY);
 ?>
 <div class="td-crumb-container">
     <div class="entry-crumbs">
@@ -48,7 +49,7 @@ $list_category = unserialize(ARR_CATEGORY);
             </header>
         </div>
 
-        <?php if($category_detail['cate_id'] == \My\General::CATEGORY_SHOWBIZ || $category_detail['cate_id'] == \My\General::CATEGORY_WORLD) { ?>
+        <?php if(in_array($category_detail['cate_id'], $show_main_img)) { ?>
         <div class="td-post-featured-image">
             <a href="" data-caption="" class="td-modal-image">
             <img width="696" height="505" class="entry-thumb" src="<?php echo $content_detail['cont_main_image'] ?>" alt="" title="<?php echo $content_detail['cont_title'] ?>">
@@ -57,7 +58,10 @@ $list_category = unserialize(ARR_CATEGORY);
         <?php } ?>
 
         <div class=td-post-content>
-            <h3 class="entry-title"><?php echo $content_detail['cont_description'] ?></h3>
+            <?php if($category_detail['cate_id'] != \My\General::CATEGORY_NATURALLY_SAVVY && $category_detail['cate_id'] != \My\General::CATEGORY_HEALTH) { ?>
+                <h3 class="entry-title"><?php echo $content_detail['cont_description'] ?></h3>
+            <?php } ?>
+
             <?php echo $content_detail['cont_detail'] ?>
         </div>
         <footer>

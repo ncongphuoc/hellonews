@@ -71,7 +71,7 @@ return array(
             'search' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/tim-kiem/[[?keyword=:keyword][&page=:page]]',
+                    'route' => '/search/[[?keyword=:keyword][&page=:page]]',
                     'constraints' => array(
                         'controller' => 'search',
                         'action' => 'index',
@@ -91,7 +91,7 @@ return array(
             'keyword' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/tu-khoa[[/:keySlug]-[:keyId].html[?page=:page]]',
+                    'route' => '/keyword[[/:keySlug]-[:keyId].html[?page=:page]]',
                     'constraints' => array(
                         'controller' => 'search',
                         'action' => 'keyword',
@@ -152,7 +152,7 @@ return array(
             'view-content' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/bai-viet[[/:contentSlug]-[:contentId].html]',
+                    'route' => '/content[[/:contentSlug]-[:contentId].html]',
                     'constraints' => array(
                         'module' => 'frontend',
                         'controller' => 'content',
@@ -226,7 +226,7 @@ return array(
             'category' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/danh-muc/[[:cateSlug]-[:cateId]][/page[/:page]][.html]',
+                    'route' => '/category/[[:cateSlug]-[:cateId]][/page[/:page]][.html]',
                     'constraints' => array(
                         'controller' => 'category',
                         'action' => 'index',
