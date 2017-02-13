@@ -586,6 +586,7 @@ class ConsoleController extends MyController
         $arr_block_string = General::blockString();
 
         $instanceSearchKeyWord = new \My\Search\Keyword();
+        $serviceKeyword = $this->serviceLocator->get('My\Models\Keyword');
         foreach ($arr_key as $key_word) {
 
             $word_slug = trim(General::getSlug($key_word));
@@ -613,9 +614,7 @@ class ConsoleController extends MyController
                 'cate_id' => (!empty($keyword_detail) && $keyword_detail['cate_id'] == -2) ? -1 : $keyword_detail['cate_id'],
             ];
 
-            $serviceKeyword = $this->serviceLocator->get('My\Models\Keyword');
             $int_result = $serviceKeyword->add($arr_data);
-            unset($serviceKeyword);
             if ($int_result) {
                 echo \My\General::getColoredString("Insert success 1 row with id = {$int_result}", 'green');
             }
@@ -2089,15 +2088,40 @@ class ConsoleController extends MyController
 
 
     public function testAction() {
-        $url_page = 'http://www.kidspot.com.au/baby/baby-development/baby-behaviour?page=5';
-        $content = General::crawler($url_page);
-        $dom = HtmlDomParser::str_get_html($content);
-        $results = $dom->find('div.main-content .articles-list .articles-list-image a');
+        $path_file_upload = fopen(PUBLIC_PATH . "/keyword.txt", "r");
 
-        if (count($results) <= 0) {
-            die("sss");
-            return;
+        while (!feof($path_file_upload)) {
+            $line_data = explode(". ", fgets($path_file_upload));
+            $arr_key[] = $line_data[1];
         }
-        die("abcd");
+
+        $instanceSearchKeyWord = new \My\Search\Keyword();
+        $serviceKeyword = $this->serviceLocator->get('My\Models\Keyword');
+        foreach ($arr_key as $key_word) {
+
+            $word_slug = trim(General::getSlug($key_word));
+            $is_exsit = $instanceSearchKeyWord->getDetail(['key_slug' => $word_slug]);
+//print_r($is_exsit);die;
+            if ($is_exsit) {
+                echo \My\General::getColoredString("Exsit keyword: " . $word_slug, 'red');
+                continue;
+            }
+
+            $arr_data = [
+                'key_name' => $key_word,
+                'key_slug' => $word_slug,
+                'created_date' => time(),
+                'cate_id' => 3,
+                'key_weight' => 2
+            ];
+
+            $int_result = $serviceKeyword->add($arr_data);
+            if ($int_result) {
+                echo \My\General::getColoredString("Insert success 1 row with id = {$int_result}", 'green');
+            }
+            $this->flush();
+        }
+        unset($instanceSearchKeyWord);
+        die();
     }
 }

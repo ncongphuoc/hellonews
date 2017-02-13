@@ -39,7 +39,7 @@ class General {
     //category
     const CATEGORY_WORLD = 1;
     const CATEGORY_SHOWBIZ = 2;
-    const CATEGORY_SCIENCE = 3;
+    const CATEGORY_TECH = 3;
     const CATEGORY_HEALTH = 4;
     const CATEGORY_NATURALLY_SAVVY= 5;
     const CATEGORY_MON_AND_BABY = 6;
