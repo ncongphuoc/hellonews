@@ -875,7 +875,7 @@ class ConsoleController extends MyController
     public function __foxnewsTechCrawler()
     {
         $url = 'http://www.foxnews.com/tech.html';
-        $cate_id = 3;
+        $cate_id = General::CATEGORY_TECH;
 
         $instanceSearchContent = new \My\Search\Content();
         $upload_dir = General::mkdirUpload();
@@ -981,6 +981,7 @@ class ConsoleController extends MyController
             }
             sleep(5);
         }
+        return true;
     }
 
     public function __foxnewsCrawler()
@@ -1092,6 +1093,7 @@ class ConsoleController extends MyController
             }
             sleep(5);
         }
+        return true;
     }
 
     public function __skynewsCrawler()
@@ -1213,7 +1215,7 @@ class ConsoleController extends MyController
             }
             sleep(3);
         }
-        die();
+        return true;
     }
 
     public function __naturallyCrawler($page, $url)
@@ -1334,8 +1336,7 @@ class ConsoleController extends MyController
             }
             sleep(2);
         }
-
-        die("done");
+        return true;
     }
 
     public function __newscientistCrawler()
