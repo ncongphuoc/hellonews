@@ -30,7 +30,7 @@ class storageCategory extends AbstractTableGateway {
             $sql = new Sql($adapter);
             $select = $sql->Select($this->table)
                     ->where('1=1' . $strWhere)
-                    ->order(array('cate_sort ASC', 'cate_slug ASC'));
+                    ->order(array('cate_id ASC'));
             $query = $sql->getSqlStringForSqlObject($select);
             return $adapter->query($query, $adapter::QUERY_MODE_EXECUTE)->toArray();
         } catch (\Zend\Http\Exception $exc) {
