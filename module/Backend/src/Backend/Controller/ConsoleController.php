@@ -645,7 +645,7 @@ class ConsoleController extends MyController
             }
         }
 
-        $result = file_put_contents(PUBLIC_PATH . '/xml/sitemap-tintuc360.xml', $xml->asXML());
+        $result = file_put_contents(PUBLIC_PATH . '/xml/hellonews.xml', $xml->asXML());
         if ($result) {
             echo General::getColoredString("Create sitemap.xml completed!", 'blue', 'cyan');
             $this->flush();
@@ -772,7 +772,7 @@ class ConsoleController extends MyController
         $intLimit = 4000;
         for ($intPage = 1; $intPage < 10000; $intPage++) {
             $file = PUBLIC_PATH . '/xml/keyword-' . $intPage . '.xml';
-            $arrKeyList = $instanceSearchKeyword->getListLimit(['not_cate_id' => -2], $intPage, $intLimit, ['key_id' => ['order' => 'asc']]);
+            $arrKeyList = $instanceSearchKeyword->getListLimit(['not_content_crawler' => 1], $intPage, $intLimit, ['key_id' => ['order' => 'asc']]);
 
             if (empty($arrKeyList)) {
                 break;

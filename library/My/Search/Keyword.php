@@ -340,6 +340,12 @@ class Keyword extends SearchAbstract {
             $boolQuery->addMust($addQuery);
         }
 
+        if (isset($params['not_content_crawler'])) {
+            $addQuery = new ESQuery\Term();
+            $addQuery->setTerm('content_crawler', $params['not_content_crawler']);
+            $boolQuery->addMustNot($addQuery);
+        }
+
         return $boolQuery;
     }
 
