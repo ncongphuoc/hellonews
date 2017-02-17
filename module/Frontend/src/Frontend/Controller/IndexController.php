@@ -48,6 +48,9 @@ class IndexController extends MyController
             $arr_content_cate[$category['cate_id']] = $arr_content_new;
         }
 
+        $helper_title = $this->serviceLocator->get('viewhelpermanager')->get('MyHeadTitle');
+        $helper_title->setTitle(General::TITLE_META);
+        
         $this->renderer = $this->serviceLocator->get('Zend\View\Renderer\PhpRenderer');
         $this->renderer->headMeta()->appendName('robots', 'index');
         

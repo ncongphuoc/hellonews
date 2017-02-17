@@ -43,6 +43,13 @@ class SearchController extends MyController
             $helper = $this->serviceLocator->get('viewhelpermanager')->get('Paging');
             $paging = $helper($params['module'], $params['__CONTROLLER__'], $params['action'], $intTotal, $intPage, $intLimit, 'search', $params);
 
+            $helper_title = $this->serviceLocator->get('viewhelpermanager')->get('MyHeadTitle');
+            echo "<pre>";
+            print_r($helper_title);
+            echo "</pre>";
+            die;
+            $helper_title()->setTitle('sssss');
+
             //get keyword
             $listContent = array();
             $instanceSearchKeyword = new \My\Search\Keyword();
@@ -155,6 +162,9 @@ class SearchController extends MyController
                 $arrKeywordList = $instanceSearchKeyword->getListLimit($arrCondition, 1, 3, ['_score' => ['order' => 'desc']]);
                 $listContent[$content['cont_id']]['list_keyword'] = $arrKeywordList;
             }
+
+            $helper_title = $this->serviceLocator->get('viewhelpermanager')->get('MyHeadTitle');
+            $helper_title->setTitle(html_entity_decode($arrKeyDetail['key_name']) . General::TITLE_META);
 
             $this->renderer = $this->serviceLocator->get('Zend\View\Renderer\PhpRenderer');
             $this->renderer->headMeta()->appendName('robots', 'index');

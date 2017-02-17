@@ -53,6 +53,9 @@ class CategoryController extends MyController {
         $metaDescription = $categoryDetail['cate_meta_description'] ? $categoryDetail['cate_meta_description'] : NULL;
         $metaSocial = $categoryDetail['cate_meta_social'] ? $categoryDetail['cate_meta_social'] : NULL;
 
+        $helper_title = $this->serviceLocator->get('viewhelpermanager')->get('MyHeadTitle');
+        $helper_title->setTitle(html_entity_decode($metaTitle) . General::TITLE_META);
+
         $this->renderer = $this->serviceLocator->get('Zend\View\Renderer\PhpRenderer');
 
         $this->renderer->headMeta()->appendName('dc.description', html_entity_decode($metaDescription) . General::TITLE_META);

@@ -272,6 +272,7 @@ return array(
     'view_helpers' => array(
         'invokables' => array(
             'paging' => 'My\View\Helper\Paging',
+            'myHeadTitle' => 'My\View\Helper\MyHeadTitle',
         )
     ),
     'translator' => array('locale' => 'en_US'),
