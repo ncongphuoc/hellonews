@@ -52,6 +52,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="General.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/My/General.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,8 +77,8 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-391">
-              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            <state relative-caret-position="408">
+              <caret line="52" column="50" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -99,16 +109,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2431">
               <caret line="143" column="12" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WordLimit.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/My/View/Helper/WordLimit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -581,12 +581,12 @@
       <workItem from="1486993808208" duration="5157000" />
       <workItem from="1487147214945" duration="57000" />
       <workItem from="1487168392272" duration="3820000" />
-      <workItem from="1487310139752" duration="3486000" />
+      <workItem from="1487310139752" duration="3558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83301000" />
+    <option name="totallyTimeSpent" value="83373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1364" height="726" extended-state="0" />
@@ -922,14 +922,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/My/General.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="24" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/My/View/Helper/Paging.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1054,10 +1046,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/library/My/General.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        <state relative-caret-position="408">
+          <caret line="52" column="50" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
           <folding />
         </state>
       </provider>

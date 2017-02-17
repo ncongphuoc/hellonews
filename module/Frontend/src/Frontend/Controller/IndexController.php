@@ -50,7 +50,7 @@ class IndexController extends MyController
         }
 
         $helper_title = $this->serviceLocator->get('viewhelpermanager')->get('MyHeadTitle');
-        $helper_title->setTitle(General::TITLE_META);
+        $helper_title->setTitle(General::SITE_AUTH);
 
         $this->renderer = $this->serviceLocator->get('Zend\View\Renderer\PhpRenderer');
         $this->renderer->headMeta()->appendName('robots', 'index');
