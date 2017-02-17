@@ -2,7 +2,8 @@
 
 namespace Frontend\Controller;
 
-use My\Controller\MyController;
+use My\Controller\MyController,
+    My\General;
 
 class IndexController extends MyController
 {
@@ -50,7 +51,7 @@ class IndexController extends MyController
 
         $helper_title = $this->serviceLocator->get('viewhelpermanager')->get('MyHeadTitle');
         $helper_title->setTitle(General::TITLE_META);
-        
+
         $this->renderer = $this->serviceLocator->get('Zend\View\Renderer\PhpRenderer');
         $this->renderer->headMeta()->appendName('robots', 'index');
         

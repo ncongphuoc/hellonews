@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12d6cde7-1aee-4574-9da5-4e586f9cd4bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/library/My/View/Helper/MyHeadTitle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Frontend/config/module.config.php" afterPath="$PROJECT_DIR$/module/Frontend/config/module.config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/CategoryController.php" afterPath="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/CategoryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/ContentController.php" afterPath="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/ContentController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/IndexController.php" afterPath="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/SearchController.php" afterPath="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/SearchController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Frontend/view/v1/layout/layout.phtml" afterPath="$PROJECT_DIR$/module/Frontend/view/v1/layout/layout.phtml" />
     </list>
     <ignored path="hellonews.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +24,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="layout.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Frontend/view/v1/layout/layout.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -62,8 +55,8 @@
       <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/SearchController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="165" column="12" selection-start-line="165" selection-start-column="12" selection-end-line="166" selection-end-column="105" />
+            <state relative-caret-position="85">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="15" />
               <folding>
                 <element signature="e#284#4332#0#PHP" expanded="false" />
               </folding>
@@ -71,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+            <state relative-caret-position="-391">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -201,9 +194,9 @@
         <option value="$PROJECT_DIR$/library/My/View/Helper/MyHeadTitle.php" />
         <option value="$PROJECT_DIR$/module/Frontend/view/v1/layout/layout.phtml" />
         <option value="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/SearchController.php" />
-        <option value="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/ContentController.php" />
         <option value="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/CategoryController.php" />
+        <option value="$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/IndexController.php" />
       </list>
     </option>
   </component>
@@ -588,12 +581,12 @@
       <workItem from="1486993808208" duration="5157000" />
       <workItem from="1487147214945" duration="57000" />
       <workItem from="1487168392272" duration="3820000" />
-      <workItem from="1487310139752" duration="3309000" />
+      <workItem from="1487310139752" duration="3486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83124000" />
+    <option name="totallyTimeSpent" value="83301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1364" height="726" extended-state="0" />
@@ -1024,24 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="165" column="12" selection-start-line="165" selection-start-column="12" selection-end-line="166" selection-end-column="105" />
-          <folding>
-            <element signature="e#284#4332#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/ContentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -1066,6 +1041,24 @@
             <marker date="1487312943029" expanded="true" signature="2682:2818" ph="..." />
             <marker date="1487312943029" expanded="true" signature="2889:3021" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="15" />
+          <folding>
+            <element signature="e#284#4332#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Frontend/src/Frontend/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
